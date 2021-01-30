@@ -1,5 +1,7 @@
 <h1>Index Page</h1>
-
+<div class="card-container">
 <% @books.each do |book| %>
-    <%= book.title %>
+    <%= render partial: "card", locals: {book: book} %>
 <% end %>
+
+</div>

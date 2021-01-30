@@ -1,0 +1,6 @@
+<h1> <%= @book.title %> </h1>
+
+<p>This is the show page</p>
+
+
+<%= button_to "Add to Cart", {controller: "cart", action: "create", user_id: current_user.id, book_id: @book.id}%> 

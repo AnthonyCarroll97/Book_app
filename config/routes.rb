@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root to: 'books#index', as: 'books'
-  get '/new', to: 'books#new', as: 'book'
+  devise_for :users
+  get '/new', to: 'books#new', as: 'new_book'
+  get '/books/:id', to: 'books#show', as: 'book'
   post '/', to: 'books#create'
-  
+  post '/books/:id', to: 'cart#create', as: 'add_to_cart'
+  get '/cart', to: 'cart#show', as: 'cart'
 end

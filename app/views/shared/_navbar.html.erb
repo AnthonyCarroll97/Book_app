@@ -1,0 +1,10 @@
+<%= link_to "Home", books_path %>
+
+
+<% if user_signed_in? %>
+  <%= link_to "sign_out", destroy_user_session_path, method: "delete" %>
+  <%else %>
+  <%= link_to "sign_in", new_user_session_path %>
+<% end %>
+
+<%= link_to "Shopping Cart", cart_path %>

@@ -1,0 +1,13 @@
+<h1>Shopping Cart</h1>
+<ul>
+    <% if @cart_items %>
+        <% @cart_items.each do |item| %>
+            <li><%= item.title %></li>
+            <li>$<%= item.price %> AUD</li>
+            <br>
+        <% end %>
+    <% else %>
+        <p>It appears that your shopping cart is empty</p>
+    <% end %>
+
+</ul>
